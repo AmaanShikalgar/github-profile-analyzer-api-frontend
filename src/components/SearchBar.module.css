@@ -1,0 +1,106 @@
+.form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.inputWrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: 14px;
+  color: var(--muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.input {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 2.5rem 0.65rem 2.75rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px var(--blue-dim);
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.input:disabled {
+  opacity: 0.5;
+}
+
+.clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.clear:hover {
+  color: var(--text);
+}
+
+.btn {
+  background: var(--blue);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.65rem 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  transition: opacity 0.15s, transform 0.1s;
+  min-width: 110px;
+  justify-content: center;
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.55s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

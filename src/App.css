@@ -1,0 +1,147 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.appHeader {
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerInner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brandIcon {
+  width: 28px;
+  height: 28px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.brandSub {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 1px;
+  white-space: nowrap;
+}
+
+.apiPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  background: var(--green-dim);
+  border: 1px solid rgba(63, 185, 80, 0.25);
+  border-radius: 20px;
+  padding: 0.25rem 0.7rem;
+  color: var(--green);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.apiPill:hover { opacity: 0.8; text-decoration: none; }
+
+.apiDot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Main layout */
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.searchSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: sticky;
+  top: 80px;
+}
+
+.storedSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sectionLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.errorBar {
+  background: var(--red-dim);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+  border-radius: var(--radius);
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: 1.25rem 1rem;
+  }
+
+  .searchSection {
+    position: static;
+  }
+
+  .brandSub {
+    display: none;
+  }
+}
