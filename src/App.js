@@ -48,6 +48,11 @@ export default function App() {
     handleAnalyze(username);
   };
 
+  const handleDelete = (username) => {
+    setStored(prev => prev.filter(p => p.username !== username));
+    if (result?.username === username) setResult(null);
+  };
+
   return (
     <div className="layout">
       <header className="appHeader">
@@ -90,7 +95,7 @@ export default function App() {
             </svg>
             Stored profiles
           </div>
-          <StoredProfiles profiles={stored} loading={storedLoading} onSelect={handleSelect} />
+          <StoredProfiles profiles={stored} loading={storedLoading} onSelect={handleSelect} onDelete={handleDelete} />
         </section>
       </main>
     </div>

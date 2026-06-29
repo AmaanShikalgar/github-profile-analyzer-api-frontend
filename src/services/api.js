@@ -12,3 +12,6 @@ export const getAllProfiles = () =>
 
 export const getProfile = (username) =>
   api.get(`/profiles/${username}`);
+
+export const deleteProfile = (username) =>
+  api.delete(`/profiles/${username}`);

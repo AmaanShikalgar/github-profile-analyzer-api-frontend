@@ -98,21 +98,49 @@
 .row {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 0.85rem 1rem;
-  background: none;
-  border: none;
   border-bottom: 1px solid var(--border);
-  color: var(--text);
-  text-align: left;
-  transition: background 0.12s;
-  width: 100%;
 }
 
 .row:last-child { border-bottom: none; }
 
-.row:hover {
-  background: rgba(56, 139, 253, 0.06);
+.row:hover { background: rgba(56, 139, 253, 0.06); }
+
+.rowMain {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  border-left: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0 1rem;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.15s, background 0.15s;
+}
+
+.deleteBtn:hover:not(:disabled) {
+  color: var(--red);
+  background: var(--red-dim);
+}
+
+.deleteBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .avatar {
